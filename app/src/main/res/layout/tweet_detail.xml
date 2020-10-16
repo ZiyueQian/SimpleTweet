@@ -49,4 +49,37 @@
         android:layout_toEndOf="@+id/tvName"
         android:text="@string/zqian" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfInput"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        app:counterEnabled="true"
+        app:counterMaxLength="280"
+        >
+        <EditText
+            android:id="@+id/etReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Start typing your reply here..."
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tfInput"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:text="Reply" />
+
 </RelativeLayout>

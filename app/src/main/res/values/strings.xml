@@ -9,5 +9,8 @@
     <string name="this_is_a_tweet">This is a tweet</string>
     <string name="profile">profile</string>
     <string name="zqian">zqian</string>
+    <string name="_7m">7m</string>
+    <string name="hello_this_is_my_tweet">Hello! This is my tweet.</string>
+    <string name="tweet">Tweet</string>
 
 </resources>

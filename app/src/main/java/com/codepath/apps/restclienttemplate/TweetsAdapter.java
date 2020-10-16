@@ -71,6 +71,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         public TextView tvName;
         public LinkifiedTextView tvBody;
         public TextView tvScreenName;
+        public TextView tvCreatedAt;
         public ImageView ivProfileImage;
         public RelativeLayout container;
 
@@ -79,6 +80,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvName = itemView.findViewById(R.id.tvName);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             tvBody = itemView.findViewById(R.id.tvBody);
+            tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             container = itemView.findViewById(R.id.item_tweet);
         }
@@ -87,6 +89,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvName.setText(tweet.user.name);
             tvScreenName.setText("@"+tweet.user.screenName);
             tvBody.setText(tweet.body);
+            tvCreatedAt.setText(tweet.getRelativeTimeAgo());
             int radius = 100; // corner radius, higher value = more rounded
             int margin = 10; // crop margin, set to 0 for corners with no crop
             Glide.with(context)
