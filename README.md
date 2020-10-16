@@ -2,10 +2,51 @@
 
 **SimpleTwitter** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **5** hours spent in total
+Time spent: **9** hours spent in total
 
-## User Stories
+## SimpleTweet Part 2
+### User Stories
 
+#### REQUIRED 
+The following **required** functionality is completed:
+
+- [x] User can **compose and post a new tweet**
+  - [x] User can click a “Compose” icon in the Action Bar on the top right
+  - [x] User can then enter a new tweet and post this to twitter
+  - [x] User is taken back to home timeline with **new tweet visible** in timeline
+  - [x] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
+  - [x] User can **see a counter with total number of characters left for tweet** on compose tweet page
+
+#### BONUS
+The following **optional** features are implemented:
+
+- [ ] User is using **"Twitter branded" colors and styles**
+- [x] User can click links in tweets launch the web browser 
+- [ ] User can **select "reply" from detail view to respond to a tweet**
+- [ ] The "Compose" action is moved to a FloatingActionButton instead of on the AppBar
+- [ ] Compose tweet functionality is build using modal overlay
+- [x] Use Parcelable instead of Serializable using the popular [Parceler library](http://guides.codepath.org/android/Using-Parceler).
+- [x] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in offline mode.
+- [ ] When a user leaves the compose view without publishing and there is existing text, prompt to save or delete the draft. If saved, the draft should then be **persisted to disk** and can later be resumed from the compose view.
+- [ ] Enable your app to receive implicit intents from other apps. When a link is shared from a web browser, it should pre-fill the text and title of the web page when composing a tweet. 
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='week4video.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+## Notes
+
+I began trying to implement the feature of replying to a tweet. I added a new EditText view in the DetailActivity of a tweet item, and I also made a new function in TweetClient to reply by adding another parameter "in_reply_to_status_id", but I couldn't exactly reply directly to the original tweet. It would instead post a new tweet where I am @-ing the original tweet's twitter handle. I'm still working on this! 
+
+
+## SimpleTweet Part 1
+### User Stories
+
+#### REQUIRED 
 The following **required** functionality is completed:
 
 - [x] User can **sign in to Twitter** using OAuth login
@@ -14,6 +55,7 @@ The following **required** functionality is completed:
   - [x] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
 - [x] User can refresh tweets timeline by pulling down to refresh
 
+#### BONUS
 The following **optional** features are implemented:
 
 - [x] User can view more tweets as they scroll with infinite pagination
@@ -29,7 +71,7 @@ The following **additional** features are implemented:
 
 - [x] Transition animation with the profile picture when the user clicks on a tweet to see the detailed view (although it's not what the real Twitter does...)
 
-## Video Walkthrough
+#### Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
@@ -37,16 +79,16 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-## Notes
+#### Notes
 
 It was a bit difficult when consuming the API. However, it was helpful to print Log statements at every step to help debug. 
 
-## Open-source libraries used
+#### Open-source libraries used
 
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
 - [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
 
-## License
+#### License
 
     Copyright [yyyy] [name of copyright owner]
 
